@@ -16,14 +16,14 @@ export type CLICommand = {
     callback: (state: State) => Promise<void>;
 }
 
-export function initState() {
+export function initState(interval: number) {
     const rl = createInterface({
         input: process.stdin,
         output: process.stdout,
         prompt: "Pokedex > ",
     });
 
-    const api = new PokeAPI;
+    const api = new PokeAPI(interval);
 
     return {
         rl: rl,
