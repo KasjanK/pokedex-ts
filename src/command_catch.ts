@@ -10,6 +10,7 @@ export async function commandCatch(state: State, ...args: string[]) {
     console.log(`Throwing a Pokeball at ${pokemon.name}...`)
     if (catchRate > 40) {
         console.log(`${pokemon.name} escaped!`);
+        return;
     }
 
     console.log(`${pokemon.name} was caught!`);
